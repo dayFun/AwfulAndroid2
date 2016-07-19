@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="stuckBug"
+            type="com.lighthouse.awfulandroid2.Bug"/>
+        <variable
+            name="user"
+            type="com.lighthouse.awfulandroid2.User"/>
+
+        <variable
+            name="bugFoundAlertBuilder"
+            type="com.lighthouse.awfulandroid2.BugFoundAlertBuilder"/>
+
+        <variable
+            name="stuckButtonListener"
+            type="com.lighthouse.awfulandroid2.StuckButtonListener"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.lighthouse.awfulandroid2.LoginActivity">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="64dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="64dp"
+            android:text="@string/login_welcome"
+            android:textAppearance="@android:style/TextAppearance.Material"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintLeft_toLeftOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/activity_login"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="56dp"
+            android:text="@string/login_lets_get_started"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintLeft_toLeftOf="@+id/activity_login"
+            app:layout_constraintRight_toRightOf="@+id/activity_login"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="31dp"
+            android:text="@string/login_enter_your_name"
+            app:layout_constraintLeft_toLeftOf="@+id/activity_login"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1"/>
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="349dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            app:layout_constraintLeft_toLeftOf="@+id/activity_login"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+
+        <Button
+            android:id="@+id/stuck_button"
+            style="@android:style/Widget.Material.Button"
+            android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:elevation="12dp"
+            android:text="@string/login_stuck"
+            android:onClick="@{stuckButtonListener}"
+            android:onLongClick="@{bugFoundAlertBuilder}"
+            app:layout_constraintRight_toRightOf="@+id/activity_login"
+            app:layout_constraintTop_toTopOf="@+id/login_button"/>
+
+        <Button
+            android:id="@+id/login_button"
+            style="@android:style/Widget.Material.Button"
+            android:layout_width="163dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:elevation="12dp"
+            android:text="@string/login_login"
+            android:enabled="@{user.getLoginName != null}"
+            app:layout_constraintLeft_toLeftOf="@+id/activity_login"
+            app:layout_constraintTop_toBottomOf="@+id/editText"/>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"/>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="384dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="152dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="152dp"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

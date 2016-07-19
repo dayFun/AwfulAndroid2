@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AwfulAndroid2</string>
+    <string name="login_welcome">Welcome!</string>
+    <string name="login_lets_get_started">Let\'s get started…</string>
+    <string name="login_enter_your_name">Please enter your name:</string>
+    <string name="login_login">Login</string>
+    <string name="login_stuck">Stuck?</string>
+    <string name="login_stuck_text">Try entering your name in the format first.last</string>
+    <string name="bug_found_text">You found a bug!</string>
+    <string name="stuck_button_got_it">Got it!</string>
+</resources>
